@@ -1,7 +1,7 @@
 
 # Given a signed 32-bit integer x, return x with its digits reversed. 
 # If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
-
+# https://leetcode.com/problems/reverse-integer/description/
 
 # Create a sting of this number. Reverse the string and cast to integer again.
 def reverseByString(x:int) -> int:
@@ -34,20 +34,20 @@ def reverse(x: int) -> int:
         x = - x
     
     # Main part of the algotirhm.
-    inverse = 0
+    reverse = 0
     while x != 0:
-        inverse *= 10
-        inverse += x % 10
+        reverse *= 10
+        reverse += x % 10
         x = x//10
 
     # Return sign of x
     if minus:
-        inverse = - inverse
+        reverse = - reverse
 
-    if inverse > MAX or inverse < MIN:
-        inverse = 0
+    if reverse > MAX or reverse < MIN:
+        reverse = 0
     
-    return inverse
+    return reverse
 
 
 
