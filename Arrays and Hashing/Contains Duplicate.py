@@ -4,9 +4,9 @@
 # and return false if every element is distinct.
 # Link: https://leetcode.com/problems/contains-duplicate/
 
-# Using hash map we can fins the duplicate.
-# Iterate through a array and check if there is an element with the same value in map
-# if there is return False, else add this element to map.
+# Using a hash map, we can find duplicates in an array. 
+# Iterate through the array and check if an element with the same value exists in the map. 
+# If it does, return False; otherwise, add the element to the map.
 def containsDuplicate(nums):
     dict = {}
     for x in nums:

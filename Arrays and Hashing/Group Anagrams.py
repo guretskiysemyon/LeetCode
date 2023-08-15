@@ -11,12 +11,13 @@
 import collections
 
 
-# Solution by using hash map.
-# So we create list [0] * 26 for every string in strs s.t in index i in list will be
-# j if i'th letter of english alphabet appears j times in current string s.
-# For example for word "abac" we got [2,1,1,0,...,0].
-# Then we use this list as unique key for dictionary, and value will be list contains strings in strs that
-# got the same key. In the end we return values of dictionary.
+# Here's a solution using a hash map. For each string in the 'strs' list, we create a list [0] * 26.
+# In this list, the value at index i represents how many times the i-th letter(starting from 0) of the English alphabet
+# appears in the current string. For example, the word 'abac' would result in the list [2, 1, 1, 0, ..., 0],
+# reflecting the letter counts.
+# Next, we use these lists as unique keys for a dictionary, 
+# and the corresponding values are lists containing strings from 'strs' that share the same key. 
+# In the end, we return the values of the dictionary.
 def groupAnagramsHash(strs: list[str]) -> list[list[str]]:
     ans_map = collections.defaultdict(list)     # create default values as list
 
@@ -31,8 +32,8 @@ def groupAnagramsHash(strs: list[str]) -> list[list[str]]:
 
 
 
-# In this solution sorted strings wiil be used. After we sort two strings that are anagrams
-# we will get the same string and can use it as a key for dictionary.
+# In this solution, we use sorted strings. When we sort two strings that are anagrams, 
+# they become identical, and we can then use them as keys for a dictionary
 def groupAnagramsSortedString(strs: list[str]) -> list[list[str]]:
     ans_map = collections.defaultdict(list)
 
@@ -45,7 +46,6 @@ def groupAnagramsSortedString(strs: list[str]) -> list[list[str]]:
 
 
 if __name__=="__main__":
-    # copyandsort()
     strs = ["eat","tea","tan","ate","nat","bat"]
     print(groupAnagramsSortedString(strs))
     strs = [""]

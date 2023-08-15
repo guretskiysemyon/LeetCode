@@ -5,10 +5,11 @@
 
 # Link: https://leetcode.com/problems/longest-consecutive-sequence/
 
-# Add all number to set.
-# Iterate through set and if (x-1) not in set then find the longest sequence starting from current element.
-# If (x-1) in set then we already counted x as part if sequence starting from (n-1) and no need to calculate for x.
-# Return maximum
+# Add all numbers to a set. Iterate through the set.
+# - If (x-1) is not in the set, then find the longest sequence starting from the current element.
+# - If (x-1) is in the set, then we have already counted 'x' as part of a sequence starting from (x-1),
+#   so there's no need to calculate for 'x'. 
+# Finally, return the maximum sequence length.
 def longestConsecutive(nums: list[int]) -> int:
     setNums = set(nums)
     maximum = 0

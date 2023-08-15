@@ -6,10 +6,9 @@
 # Link: https://leetcode.com/problems/two-sum/
 
 
-# Iretate through nums and add every element ot hash map.
-# Secondly, iterate again through nums and for every element x check
-# if there target - x in hash map.
-# Return true we find (target - x) in map.
+# Iterate through 'nums' and add every element to a hash map. 
+# Then, iterate through 'nums' again and for every element 'x', check if the value 'target - x' exists in the hash map.
+# Return 'True' if we find that 'target - x' is in the map.
 def twoSum(nums, target):
         map = {}
         n = len(nums)

@@ -9,10 +9,10 @@
 # Link: https://leetcode.com/problems/contains-duplicate/
 
 
-# Create two hash maps.
-# Iterate through s and add every element to map as key and
-# and number of times this element appears in s will be the value.
-# Do the same for t. And check if two maps are equel and return unswer
+# Create two hash maps. Iterate through 's' and add every element to the first map as a key, 
+# with the number of times the element appears in 's' as the corresponding value. 
+# Repeat the same process for 't' and its map. 
+# Finally, check if the two maps are equal and return the answer.
 def isAnagram(s, t):
         if len(s) != len(t):
             return False
