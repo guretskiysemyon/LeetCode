@@ -12,6 +12,7 @@
 # Solution: 
 # Find for each element x the first element that smaller than x from both right and left.
 # Now itherate through and calculate the maximum area.
+
 def largestRectangleArea(heights: list[int]) -> int:
     right = [len(heights) ] * len(heights)
     stack = []
