@@ -1,5 +1,5 @@
 
-
+# Author: Semyon Guretskiy
 
 
 # 84. Largest Rectangle in Histogram
@@ -44,5 +44,4 @@ if __name__ == "__main__":
     print(largestRectangleArea(heights))
     heights = [2,4]
     print(largestRectangleArea(heights))
-
- 
+    
