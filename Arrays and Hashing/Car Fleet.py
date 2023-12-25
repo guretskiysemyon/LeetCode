@@ -1,46 +1,48 @@
 
 # Author:  Semyon Guretskiy
 
-# 853. Car Fleet
+'''
+853. Car Fleet
 
-# There are n cars going to the same destination along a one-lane road.
-# The destination is target miles away.
+There are n cars going to the same destination along a one-lane road.
+The destination is target miles away.
 
-# You are given two integer array position and speed, both of length n,
-# where position[i] is the position of the ith car and speed[i] is the speed of the ith car (in miles per hour).
+You are given two integer array position and speed, both of length n,
+where position[i] is the position of the ith car and speed[i] is the speed of the ith car (in miles per hour).
 
-# A car can never pass another car ahead of it, but it can catch up to it
-# and drive bumper to bumper at the same speed. The faster car will slow down to match the slower car's speed.
-# The distance between these two cars is ignored (i.e., they are assumed to have the same position).
+A car can never pass another car ahead of it, but it can catch up to it
+and drive bumper to bumper at the same speed. The faster car will slow down to match the slower car's speed.
+The distance between these two cars is ignored (i.e., they are assumed to have the same position).
 
-# A car fleet is some non-empty set of cars driving at the same position and same speed.
-# Note that a single car is also a car fleet.
+A car fleet is some non-empty set of cars driving at the same position and same speed.
+Note that a single car is also a car fleet.
 
-# If a car catches up to a car fleet right at the destination point, it will still be considered as one car fleet.
-# Return the number of car fleets that will arrive at the destination.
+If a car catches up to a car fleet right at the destination point, it will still be considered as one car fleet.
+Return the number of car fleets that will arrive at the destination.
 
-# Link: https://leetcode.com/problems/car-fleet/description/
+Link: https://leetcode.com/problems/car-fleet/description/
 
-# Solution:
-# 1. Create a sorted list in reverse order  of tuples data, where each tuple contains the initial position and speed of a car. 
+Solution:
+1. Create a sorted list in reverse order  of tuples data, where each tuple contains the initial position and speed of a car. 
 
-# 2. Initialize a variable count to 1. This variable will keep track of the number of car fleets formed. 
-# You start with one fleet because the first car (the one with the highest initial position)
-# is always considered as the lead car of the first fleet.
+2. Initialize a variable count to 1. This variable will keep track of the number of car fleets formed. 
+You start with one fleet because the first car (the one with the highest initial position)
+is always considered as the lead car of the first fleet.
 
-# 3. Calculate the time it takes for the lead car (the first car in the sorted list) 
-# to reach the target using the formula flee_speed = (target - data[0][0]) / data[0][1]. 
-# This calculates the time it takes for the lead car to reach the target at its speed. 
-# Iterate through the rest of the cars in the data list. 
+3. Calculate the time it takes for the lead car (the first car in the sorted list) 
+to reach the target using the formula flee_speed = (target - data[0][0]) / data[0][1]. 
+This calculates the time it takes for the lead car to reach the target at its speed. 
+Iterate through the rest of the cars in the data list. 
 
-# 4. For each car, calculate the time cur it takes to reach the target using the same formula.
+4. For each car, calculate the time cur it takes to reach the target using the same formula.
 
-# 5. Compare the cur time with the flee_speed. If cur is greater than flee_speed, 
-# it means the current car cannot catch up with the lead car and forms a new car fleet. 
-#Increment the count by 1, and update flee_speed to the current cur.
+5. Compare the cur time with the flee_speed. If cur is greater than flee_speed, 
+it means the current car cannot catch up with the lead car and forms a new car fleet. 
+Increment the count by 1, and update flee_speed to the current cur.
 
-# After the loop, return the final value of count, which represents the total number of car fleets
-# that can reach the target without any car overtaking another car in the same fleet.
+After the loop, return the final value of count, which represents the total number of car fleets
+that can reach the target without any car overtaking another car in the same fleet.
+'''
 
 def carFleet(target: int, position: list[int], speed: list[int]) -> int:
     n = len(position)
