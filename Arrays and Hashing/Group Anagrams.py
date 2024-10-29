@@ -5,6 +5,11 @@
 # An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
 # typically using all the original letters exactly once.
 
+# Constraints:
+# 1 <= strs.length <= 1000.
+# 0 <= strs[i].length <= 100
+# strs[i] is made up of lowercase English letters.
+
 # Link: https://leetcode.com/problems/group-anagrams/description/
 
 

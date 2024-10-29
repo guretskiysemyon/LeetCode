@@ -16,6 +16,7 @@
 # The solution is to check everything in lowercase and move the pointers through white spaces
 # until they arrive at a numeral or letter character.
 
+
 def isPalindrome(s: str) -> bool:
     n = len(s)
     if n == 1:
@@ -23,19 +24,19 @@ def isPalindrome(s: str) -> bool:
     i = 0
     j = n - 1
     while i < j:
-        while i < j and not s[i].isalnum():
+        if not s[i].isalnum():
             i += 1
-        while j > i and not s[j].isalnum():
+        elif not s[j].isalnum():
             j -= 1
-        if s[i].lower() != s[j].lower():
+        elif s[i].lower() != s[j].lower():
             return False
-        i += 1
-        j -= 1
+        else:
+            i += 1
+            j -= 1
     return True
 
 
-
-def isPalindrome_two(s):
+def isPalindrome_with_list(s):
     s = s.lower()
     letters = []
     for x in s:
@@ -63,11 +64,11 @@ if __name__=="__main__":
 
     print("Second")
     s = "A man, a plan, a canal: Panama"
-    print(isPalindrome_two(s) == True)
+    print(isPalindrome_with_list(s) == True)
     s = "race a car"
-    print(isPalindrome_two(s) == False)
+    print(isPalindrome_with_list(s) == False)
     s = " "
-    print(isPalindrome_two(s)==True)
+    print(isPalindrome_with_list(s)==True)
 
 
 

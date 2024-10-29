@@ -1,3 +1,6 @@
+'''
+Author: Semyon Guretskiy
+'''
 
 '''
 704. Binary Search

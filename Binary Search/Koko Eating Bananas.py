@@ -1,6 +1,7 @@
 
-
-
+'''
+Author: Semyon Guretskiy
+'''
 
 
 '''

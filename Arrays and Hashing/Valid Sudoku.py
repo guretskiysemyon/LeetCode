@@ -43,8 +43,11 @@ def isValidSudoku(board):
                 rows[i] |= mask
                 columns[j] |= mask
                 squares[(i // 3) * 3 + j // 3] |= mask
-
     return True
+
+
+
+
 
 
 if __name__ == "__main__":
