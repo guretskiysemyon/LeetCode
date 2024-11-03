@@ -1,4 +1,6 @@
-
+'''
+Author: Semyon Guretskiy
+'''
 
 '''981. Time Based Key-Value Store
 
