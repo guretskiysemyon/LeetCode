@@ -2,7 +2,6 @@
 Author: Semyon Guretskiy
 '''
 
-
 '''
 21. Merge Two Sorted Lists
 
