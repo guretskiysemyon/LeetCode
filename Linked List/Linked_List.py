@@ -8,6 +8,12 @@ class ListNode(object):
         self.val = val
         self.next = next
 
+class ListNodeTwoDirectrion(object):
+    def __init__(self, val=0, next=None, previous = None):
+        self.val = val
+        self.next = next
+        self.prev = previous
+
 
 
 class LinkedList(object):
