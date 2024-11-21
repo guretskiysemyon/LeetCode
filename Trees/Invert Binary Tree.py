@@ -1,12 +1,22 @@
+'''
+Author: Semyon Guretskiy
+'''
+
+
+'''
+Given the root of a binary tree, invert the tree, and return its root.
+      4                   4
+    2     7     -->     7      2
+  1   3  6  9         9   6  3    1
+
+Link: https://leetcode.com/problems/invert-binary-tree/description/
+'''
+
+
+
+
 from typing import Optional
 from BinaryTree import TreeNode, Tree, print_tree
-
-
-# Given the root of a binary tree, invert the tree, and return its root.
-#       4                   4
-#     2    7     -->     7     2
-#   1   3 6  9         9   6 3    1
-# https://leetcode.com/problems/invert-binary-tree/description/
 
 
 # Swap left and right in post-order traversal.

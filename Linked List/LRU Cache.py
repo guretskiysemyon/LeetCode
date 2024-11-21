@@ -1,5 +1,8 @@
 
-from Linked_List import *
+
+'''
+Author: Semyon Guretskiy
+'''
 
 '''
 146. LRU Cache
@@ -14,13 +17,14 @@ LRUCache(int capacity) Initialize the LRU cache with positive size capacity.
     from this operation, evict the least recently used key.
 The functions get and put must each run in O(1) average time complexity.
 
+Link: https://leetcode.com/problems/lru-cache/description/
 
 
 Solution:
 An LRU cache is implemented using a dictionary and a doubly linked list.
 
 '''
-
+from Linked_List import *
 
 class LRUCache:
 
