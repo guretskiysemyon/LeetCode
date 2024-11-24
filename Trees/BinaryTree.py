@@ -13,26 +13,33 @@ class Tree:
     def __init__(self) -> None:
         self.root = None
 
-    def createFromListBFS(self, arr):
-        lenght = len(arr)
-        queue = []
-        if lenght == 0:
-            return self.root
+    def createFromListBFS(self, values):
+
+        if not values or values[0] is None:
+            return None
+            
+        # Create root node
+        self.root = TreeNode(values[0])
         
-        arr.append(None)
-        self.root = TreeNode(arr[0])
-        queue.append(self.root)
-    
-        i = 1
-        while i < lenght:
-            curr = queue.pop(0)
-            left_node = TreeNode(arr[i])
-            right_node = TreeNode(arr[i+1])
-            queue.append(left_node)
-            queue.append(right_node)
-            curr.left = left_node
-            curr.right = right_node
-            i += 2
+        # Use a queue to keep track of nodes that need children
+        queue = [self.root]
+        i = 1  # Index for values array
+        
+        # Process each node in the queue
+        while queue and i < len(values):
+            current = queue.pop(0)
+            
+            # Add left child if exists
+            if i < len(values) and values[i] is not None:
+                current.left = TreeNode(values[i])
+                queue.append(current.left)
+            i += 1
+            
+            # Add right child if exists
+            if i < len(values) and values[i] is not None:
+                current.right = TreeNode(values[i])
+                queue.append(current.right)
+            i += 1
         
         return self.root
                 

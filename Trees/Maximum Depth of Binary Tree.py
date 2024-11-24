@@ -21,7 +21,7 @@ from BinaryTree import TreeNode, Tree
 
 # Recursive DFS
 def maxDepthRecursive(root: Optional[TreeNode]) -> int:
-    if root == None:
+    if not root:
         return 0
 
     return 1 + max(maxDepthRecursive(root.left), maxDepthRecursive(root.right))
@@ -52,6 +52,7 @@ if __name__ == "__main__":
     root = [3,9,20, None, None,15,7]
     tree = Tree()
     tree.createFromListBFS(root)
+    tree.print_tree(tree.root)
     k = maxDepthRecursive(tree.root)
     k1 = maxDepthIterative(tree.root)
     tree.print_tree(tree.root)

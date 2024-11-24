@@ -16,7 +16,7 @@ Link: https://leetcode.com/problems/invert-binary-tree/description/
 
 
 from typing import Optional
-from BinaryTree import TreeNode, Tree, print_tree
+from BinaryTree import TreeNode, Tree
 
 
 # Swap left and right in post-order traversal.
@@ -36,5 +36,6 @@ if __name__ == "__main__":
     root = [4,2,7,1,3,6,9]
     tree = Tree()
     tree.createFromListBFS(root)
+    tree.print_tree(tree.root)
     invertTree(tree.root)
-    print_tree(tree.root)
+    tree.print_tree(tree.root)
