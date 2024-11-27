@@ -50,10 +50,11 @@ def levelOrder(root: Optional[TreeNode]) -> List[List[int]]:
             result[level].append(current_node.val)
         
         # Add children to queue with next level number
-        queue.extend([
-            (current_node.left, level + 1),
-            (current_node.right, level + 1)
-        ])
+        if current_node.left:
+            queue.append((current_node.left, level + 1))
+        if current_node.right:
+            queue.append((current_node.right, level + 1))
+
         
     return result
 
