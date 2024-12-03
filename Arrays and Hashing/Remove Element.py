@@ -4,9 +4,11 @@ Author: Semyon Guretskiy
 
 '''
 27. Remove Element
-
+Easy
 Given an integer array nums and an integer val, remove all occurrences of val in nums in-place.
 The order of the elements may be changed. Then return the number of elements which are not equal to val.
+
+Link: https://leetcode.com/problems/remove-element/description/?envType=study-plan-v2&envId=top-interview-150
 
 Solution:
     Uses two-pointer technique:

@@ -10,6 +10,8 @@ Medium
 Given a sorted array nums, remove duplicates so each element appears at most twice.
 Return k elements after placing the final result in the first k slots.
 
+Link: https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/?envType=study-plan-v2&envId=top-interview-150
+
 Solution:
     Uses two-pointer approach to track write position and reading position.
     Key idea: Compare current element with element two positions behind write pointer.

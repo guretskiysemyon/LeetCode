@@ -1,18 +1,20 @@
 
 
-# Given an integer array nums, return an array answer such that answer[i] is equal to the product of all
-# the elements of nums except nums[i].
-# The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
-# You must write an algorithm that runs in O(n) time and without using the division operation.
+'''
+Given an integer array nums, return an array answer such that answer[i] is equal to the product of all
+the elements of nums except nums[i].
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+You must write an algorithm that runs in O(n) time and without using the division operation.
 
-# Link: https://leetcode.com/problems/product-of-array-except-self/
+Link: https://leetcode.com/problems/product-of-array-except-self/
 
-# The idea is to create an array of prefix products and an array of suffix products.
-# For each element at index 'i' in 'nums', the result of the product of all elements except itself
-# will be 'prefix[i-1] * suffix[i+1]'. 
-# In this function, we can avoid using the second array because of all needed data is available during the second loop, 
-# and it allows us to calculate the result while computing the suffix products.
-# In the end, we return the resulting array.
+The idea is to create an array of prefix products and an array of suffix products.
+For each element at index 'i' in 'nums', the result of the product of all elements except itself
+will be 'prefix[i-1] * suffix[i+1]'. 
+In this function, we can avoid using the second array because of all needed data is available during the second loop, 
+and it allows us to calculate the result while computing the suffix products.
+In the end, we return the resulting array.
+'''
 def productExceptSelf(nums):
         n = len(nums)
         res = [1 for i in range(n)]
