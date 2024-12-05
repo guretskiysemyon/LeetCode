@@ -14,17 +14,83 @@ Link: https://leetcode.com/problems/median-of-two-sorted-arrays/description/
 
 
 Solution:
-We can apply a modified binary search, adapting the conditions based on whether the array has been rotated and where the minimum might lie.
 
-First, if the array is rotated such that the minimum element is in the left half, e.g., `[5, 6, 0, 1, 2, 3, 4]`, 
-we can check this by verifying `nums[left] > nums[middle]`.
-
-1. If `nums[left] > nums[middle]`, it means the minimum element is in the left half. 
-   - If the target is greater than or equal to `nums[left]` or less than `nums[middle]`, we continue the search in the left half.
-   - Otherwise, we search in the right half.
-
-2. If the minimum is not in the left part, then the left half is sorted in ascending order, and we can proceed with a standard binary search.
-   - Check if `target >= nums[left]` or `target < nums[middle]`. If either condition holds, the target might be in the left half, so we adjust the search to that side.
-
-This approach ensures we always discard half of the search space, achieving O(log n) complexity.
 '''
+
+def findMedianSortedArrays(nums1: list[int], nums2: list[int]) -> float:
+    n = len(nums1)
+    m = len(nums2)
+
+
+    l1 = l2 = 0
+    r1 = n - 1
+    r2 = m - 1
+
+    while l1 < r1 or l2 < r2:
+        m1 = (l1 + r1) // 2
+        m2 = (l2 + r2) // 2
+
+        if nums1[m1] == nums2[m2]:
+            return nums1[m1]
+        
+        elif nums1[m1] < nums2[m2]:
+            if l1 == r1 or m1 == n - 1:
+                r2 = m2 - 1
+                l1 = r1
+            elif l2 == r2 or m2 == 0:
+                l1 = m1 + 1
+                r2 = l2
+            else:
+                l1 = m1 + 1
+                r2 = m2 - 1
+        else:
+            if l1 == r1 or m1 == 0:
+                l2 = m2 + 1
+                r1 = l1
+            elif l2 == r2 or m2 == m - 1:
+                r1 = m1 - 1
+                l2 = r2
+            else:
+                r1 = m1 - 1
+                l2 = m2 + 1
+    
+    m1 = (l1+r1) // 2
+    m2 = (l2 + r2) // 2
+    if (n + m) % 2 == 0:
+        return float(nums1[m1] + nums2[m2]) / 2
+    
+    return min(nums1[m1], nums2[m2])
+    
+    
+        
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    nums1 = [1,3]
+    nums2 = [2]
+    print(findMedianSortedArrays(nums1, nums2))
+
+    nums1 = [1,2]
+    nums2 = [3,4]
+    print(findMedianSortedArrays(nums1, nums2))
+
+
+    numbers = [1,2,3,4,5,6,7,8,9,10, 11,12,13,14,15,16,17,18,19,20]
+    
+    
+    for i in range(1,20):
+        first = []
+        second = []
+        for j in range(i):
+            first.append(numbers[j])
+        
+        for k in range(i, 20):
+            second.append(numbers[k])
+        
+        print(findMedianSortedArrays(first, second))
